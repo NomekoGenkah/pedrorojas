@@ -1,0 +1,117 @@
+.quickbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quickbar-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.quickbar-logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.quickbar-center {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.quickbar-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.quickbar-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.quickbar-link.active {
+  color: #0066cc;
+}
+
+.quickbar-link:hover {
+  color: #0066cc;
+}
+
+.quickbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0066cc;
+  transition: width 0.2s ease;
+}
+
+.quickbar-link:hover::after {
+  width: 100%;
+}
+
+.quickbar-cv-button {
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+  border-radius: 25px;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quickbar-cv-button:hover {
+  background: #f0f7ff;
+}
+
+.cv-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #0066cc;
+}
+
+@media (max-width: 768px) {
+  .quickbar-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .quickbar-links {
+    gap: 1rem;
+  }
+
+  .quickbar-link {
+    font-size: 0.85rem;
+  }
+}
